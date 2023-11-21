@@ -18,6 +18,14 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - uses: actions/checkout@v2
+    - name: Resources Setting
+      run: |
+        mkdir ./src/main/resources
+        touch ./src/main/resources/application.yml
+        echo "${{ secrets.APPLICATION }}" > ./src/main/resources/application.yml
+      shell: bash
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       shell: bash
