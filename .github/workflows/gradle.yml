@@ -61,9 +61,9 @@ jobs:
         port: ${{ secrets.EC2_SSH_PORT }}
         timeout: 60s
         script: | 
-          sudo docker stop spring-docker
-          sudo docker rm spring-docker
-          sudo docker run -it -d -p 80:8080 --name spring-docker limjyjustin/spring-docker
+          sudo docker stop deploy-test
+          sudo docker rm deploy-test
+          sudo docker run -it -d -p 80:8080 --name deploy-test limjyjustin/deploy-test
     
     - name: Remove IP FROM security group
       run: |
