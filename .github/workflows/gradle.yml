@@ -72,7 +72,7 @@ jobs:
         script: | 
           sudo docker stop deploy-test
           sudo docker rm deploy-test
-          sudo docker run -it -d -p 80:8080 --name deploy-test limjyjustin/deploy-test
+          sudo docker run -it -d -p 8080:8080 --name deploy-test limjyjustin/deploy-test
     
     - name: Remove IP FROM security group
       run: |
