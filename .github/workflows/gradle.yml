@@ -40,10 +40,11 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Docker build & push
-      run: |
-        docker build -f Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/deploy-test .
-        docker push ${{ secrets.DOCKERHUB_USERNAME }}/deploy-test
+    - name: Docker Image Build
+      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/deploy-test .
+
+    - name: Docker Hub Push
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/deploy-test
 
     - name: Get Github IP
       id: ip
