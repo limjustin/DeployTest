@@ -34,14 +34,14 @@ jobs:
     - name: Spring Boot Build
       run: ./gradlew clean build -x test
 
+    - name: Docker Image Build
+      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/deploy-test .
+
     - name: Docker Hub Login
       uses: docker/login-action@v2
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-    - name: Docker Image Build
-      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/deploy-test .
 
     - name: Docker Hub Push
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/deploy-test
