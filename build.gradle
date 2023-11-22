@@ -28,9 +28,6 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-	// AWS RDS
-	implementation 'mysql:mysql-connector-java'
 }
 
 tasks.named('bootBuildImage') {
