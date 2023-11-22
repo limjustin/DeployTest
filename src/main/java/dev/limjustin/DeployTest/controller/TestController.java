@@ -1,4 +1,4 @@
-package dev.limjustin.DeployTest;
+package dev.limjustin.DeployTest.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
