@@ -68,8 +68,9 @@ jobs:
         password: ${{ secrets.EC2_PASSWORD }} 
         port: ${{ secrets.EC2_SSH_PORT }}
         timeout: 60s
-        script: | 
-          sudo docker ps
+        script: |
+          sudo docker stop deploy-test
+          sudo docker rm deploy-test
           sudo docker pull limjyjustin/deploy-test
           sudo docker run -it -d -p 8080:8080 --name deploy-test limjyjustin/deploy-test
     
