@@ -15,4 +15,9 @@ public class TestController {
     public String homeMain() {
         return "This is Main page";
     }
+
+    @GetMapping("/sub")
+    public String homeSub() {
+        return "This is sub page";
+    }
 }
